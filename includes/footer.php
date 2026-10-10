@@ -1,0 +1,1 @@
+</main><footer><div><strong>FreshCatch</strong><p>Fresh seafood, directly from trusted local sellers.</p></div><p>© <?=date('Y')?> FreshCatch Marketplace</p></footer><script src="<?=url('assets/js/app.js')?>"></script></body></html>

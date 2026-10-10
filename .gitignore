@@ -1,0 +1,16 @@
+# Local database credentials
+includes/config.php
+.env
+.env.*
+
+# Uploaded product images (preserve the folder)
+uploads/products/*
+!uploads/products/.gitkeep
+
+# Local backups and generated files
+FreshCatch-Backup/
+*.dump
+*.bak
+*backup*.sql
+
+database/repair-demo-accounts.sql
