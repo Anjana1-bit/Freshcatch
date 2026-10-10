@@ -14,3 +14,4 @@ FreshCatch-Backup/
 *backup*.sql
 
 database/repair-demo-accounts.sql
+includes/config.hosted.php
