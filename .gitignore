@@ -1,5 +1,5 @@
 # Local database credentials
-includes/config.php
+includes/config.local.php
 .env
 .env.*
 

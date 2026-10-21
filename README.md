@@ -28,10 +28,17 @@ FreshCatch is a full-stack PHP/MySQL marketplace that connects buyers with local
 2. Start **Apache** and **MySQL** in XAMPP.
 3. For a new database, open phpMyAdmin, choose **Import**, and import `database/schema.sql`.
    For an existing database, import `database/migration_payment.sql` once to add UPI/COD payment fields. Do not re-import the full schema into an existing database.
-4. Check credentials in `includes/config.php`. XAMPP defaults are `root` with an empty password.
+4. Copy `includes/config.local.example.php` to `includes/config.local.php` and set the database values. XAMPP defaults are `localhost`, `freshcatch`, user `root`, and an empty password. This local file is ignored by Git.
 5. Visit `http://localhost/freshcatch/`.
 
 For Linux XAMPP, keep the project at `/opt/lampp/htdocs/freshcatch` and visit `http://localhost/freshcatch/`. Ensure Apache can write to `uploads/products/` before sellers upload photos.
+
+## Shared-host deployment
+
+1. Create a MySQL database and user in your host control panel, then select that database in phpMyAdmin and import `database/schema_hosted.sql`. For an existing database, run `database/migration_payment.sql` once instead.
+2. Copy `includes/config.local.example.php` to `includes/config.local.php`, then enter the host-provided database credentials. Leave `BASE_URL` empty for a domain-root deployment or set it to the subfolder, such as `/freshcatch`.
+3. Ensure `uploads/products/` is writable by PHP (usually permissions `755` or `775`, depending on the host). Do not make it `777` unless the host specifically requires it.
+4. Upload the app files, including the `includes`, `assets`, and `uploads` folders. Do not upload the development-only `work` or `outputs` folders.
 
 ## Demo accounts
 
